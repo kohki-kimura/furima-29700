@@ -50,11 +50,11 @@ Things you may want to cover:
 | description | text    | null: false                    |
 | price       | integer | null: false                    |
 | user_id     | integer | null: false, foreign_key: true |
-| category    | integer | null: false                    |
-| dondition   | integer | null: false                    |
-| fee         | integer | null: false                    |
-| source      | integer | null: false                    |
-| shipping    | integer | null: false                    |
+| category_id | integer | null: false                    |
+| dondition_id| integer | null: false                    |
+| fee_id      | integer | null: false                    |
+| source_id   | integer | null: false                    |
+| shipping_id | integer | null: false                    |
 
 ### Association
 - belongs_to :user
@@ -77,7 +77,7 @@ Things you may want to cover:
 | Column        | Type    | Options                        |
 | ------------- | ------- | ------------------------------ |
 | postal_code   | string  | null: false                    |
-| state         | integer | null: false                    |
+| state_id      | integer | null: false                    |
 | city          | string  | null: false                    |
 | address       | string  | null: false                    |
 | building_name | string  |                                |
