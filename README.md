@@ -44,17 +44,17 @@ Things you may want to cover:
 
 ## itemsテーブル
 
-| Column      | Type   | Options                         |
-| ----------- | ------ | ------------------------------- | 
-| name        | string  | null: false                    |
-| description | text    | null: false                    |
-| price       | integer | null: false                    |
-| user_id     | integer | null: false, foreign_key: true |
-| category_id | integer | null: false                    |
-| dondition_id| integer | null: false                    |
-| fee_id      | integer | null: false                    |
-| source_id   | integer | null: false                    |
-| shipping_id | integer | null: false                    |
+| Column       | Type   | Options                         |
+| -----------  | ------ | ------------------------------- | 
+| name         | string  | null: false                    |
+| description  | text    | null: false                    |
+| price        | integer | null: false                    |
+| user_id      | integer | null: false, foreign_key: true |
+| category_id  | integer | null: false                    |
+| condition_id | integer | null: false                    |
+| fee_id       | integer | null: false                    |
+| days_id      | integer | null: false                    |
+| address_id   | integer | null: false                    |
 
 ### Association
 - belongs_to :user
