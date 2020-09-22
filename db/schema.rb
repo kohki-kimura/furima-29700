@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_09_18_065639) do
     t.integer "category_id", null: false
     t.integer "condition_id", null: false
     t.integer "fee_id", null: false
-    t.integer "days_id", null: false
+    t.integer "day_id", null: false
     t.integer "address_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
