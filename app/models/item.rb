@@ -9,6 +9,8 @@ class Item < ApplicationRecord
   belongs_to :user
 
   validates :name, :description, :price, :user, :category, :condition, :fee, :day, :address, presence: true
-  # validates :price, format: { with: /\A[300-9999999]+\z/}
+  with_options numericality: { greater_than: 299, less_than: 10000000 } do
+    validates :price
+  end
   validates :category_id, :condition_id, :fee_id, :day_id, :address_id, numericality: { other_than: 1 } 
 end
