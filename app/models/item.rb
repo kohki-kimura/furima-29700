@@ -7,6 +7,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :address
 
   belongs_to :user
+  has_one_attached :image
 
   validates :name, :description, :price, :user, :category, :condition, :fee, :day, :address, presence: true
   with_options numericality: { greater_than: 299, less_than: 10000000 } do
