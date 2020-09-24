@@ -53,7 +53,7 @@ Things you may want to cover:
 | category_id  | integer | null: false                    |
 | condition_id | integer | null: false                    |
 | fee_id       | integer | null: false                    |
-| days_id      | integer | null: false                    |
+| day_id       | integer | null: false                    |
 | address_id   | integer | null: false                    |
 
 ### Association
