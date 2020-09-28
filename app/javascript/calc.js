@@ -20,4 +20,4 @@ function calc(){
    });
   
   }
-  window.addEventListener('keyup', calc);
+  window.addEventListener('load', calc);
