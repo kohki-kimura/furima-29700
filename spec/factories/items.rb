@@ -7,7 +7,7 @@ FactoryBot.define do
     condition_id      { 2 }
     fee_id            { 2 }
     day_id            { 2 }
-    address_id        { 2 }
+    ship_from_id        { 2 }
 
     after(:build) do |item|
       item.image.attach(io: File.open('app/assets/images/camera.png'), filename: 'camera.png')
