@@ -85,4 +85,4 @@ Things you may want to cover:
 | buy_id        | integer | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :buy
+- belongs_to :order
