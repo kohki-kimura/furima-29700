@@ -2,14 +2,17 @@ class OrdersController < ApplicationController
 
   def index
     @item = Item.find(params[:item_id])
+    @order = Order.new
   end
  
   def create
     @item = Item.find(params[:item_id])
     @order = Order.new(order_params)
+    # ここをオーダーではなくフォームオブジェクトのニューにする
     if @order.valid?
       pay_item
       @order.save
+      # セーブかけるときはフォームオブジェクトの中にセーブメソッドが必要
       return redirect_to root_path
     else
       render 'index'
@@ -19,14 +22,15 @@ class OrdersController < ApplicationController
   private
  
   def order_params
-    params.permit(:item_id).merge(user_id: current_user.id)
+    binding.pry
+    params.permit(:token).merge(user_id: current_user.id, item_id: @item.id)
   end
  
   def pay_item
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     Payjp::Charge.create(
       amount: @item.price,
-      card: params[:token],
+      card: order_params[:token],
       currency:'jpy'
     )
   end
