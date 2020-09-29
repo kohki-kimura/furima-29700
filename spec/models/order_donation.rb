@@ -17,18 +17,18 @@ RSpec.describe OrderDonation, type: :model do
     it 'postal_codeが空だと登録できない' do
       @order_donation.postal_code = nil
       @order_donation.valid?
-      expect(@order_donation.errors.full_messages).to include("Postal code is invalid")
+      expect(@order_donation.errors.full_messages).to include('Postal code is invalid')
     end
     it 'postal_codeはハイフンがないと登録できない' do
-      @order_donation.postal_code = "1234567"
+      @order_donation.postal_code = '1234567'
       @order_donation.valid?
-      expect(@order_donation.errors.full_messages).to include("Postal code is invalid")
+      expect(@order_donation.errors.full_messages).to include('Postal code is invalid')
     end
 
     it 'state_idが空だと登録できない' do
       @order_donation.state_id = nil
       @order_donation.valid?
-      expect(@order_donation.errors.full_messages).to include("State is not a number")
+      expect(@order_donation.errors.full_messages).to include('State is not a number')
     end
     it 'cityが空だと登録できない' do
       @order_donation.city = nil
@@ -43,18 +43,17 @@ RSpec.describe OrderDonation, type: :model do
     it 'phone_numberが空だと登録できない' do
       @order_donation.phone_number = nil
       @order_donation.valid?
-      expect(@order_donation.errors.full_messages).to include("Phone number is invalid")
+      expect(@order_donation.errors.full_messages).to include('Phone number is invalid')
     end
     it 'phone_numberは12桁以上だと登録できない' do
-      @order_donation.phone_number = "123456789999"
+      @order_donation.phone_number = '123456789999'
       @order_donation.valid?
-      expect(@order_donation.errors.full_messages).to include("Phone number is invalid")
+      expect(@order_donation.errors.full_messages).to include('Phone number is invalid')
     end
     it 'building_nameが空だと登録できない' do
       @order_donation.building_name = nil
       @order_donation.valid?
       expect(@order_donation.errors.full_messages).to include("Building name can't be blank")
     end
-    
   end
 end
