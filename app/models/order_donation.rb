@@ -4,7 +4,6 @@ class OrderDonation
 
   validates :token, :city, :state_id, :address,  presence: true
   validates :state_id, numericality: { other_than: 1 }
-
   validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/ }
   validates :phone_number, format: { with: /\A\d{10,11}\z/ }
 
