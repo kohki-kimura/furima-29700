@@ -50,10 +50,5 @@ RSpec.describe OrderDonation, type: :model do
       @order_donation.valid?
       expect(@order_donation.errors.full_messages).to include('Phone number is invalid')
     end
-    it 'building_nameが空だと登録できない' do
-      @order_donation.building_name = nil
-      @order_donation.valid?
-      expect(@order_donation.errors.full_messages).to include("Building name can't be blank")
-    end
   end
 end
