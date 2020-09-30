@@ -6,7 +6,7 @@ RSpec.describe Item, type: :model do
   end
 
   describe '商品出品' do
-    it 'nameとdescriptionとpriceとcategory_idとcondition_idとfee_idとday_idとaddress_idとimageとuser_idが存在すれば登録できる' do
+    it 'nameとdescriptionとpriceとcategory_idとcondition_idとfee_idとday_idとship_from_idとimageとuser_idが存在すれば登録できる' do
       expect(@item).to be_valid
     end
     it 'nameが空だと登録できない' do
@@ -79,15 +79,15 @@ RSpec.describe Item, type: :model do
       @item.valid?
       expect(@item.errors.full_messages).to include('Day must be other than 1')
     end
-    it 'addressが空だと登録できない' do
-      @item.address_id = nil
+    it 'ship_fromが空だと登録できない' do
+      @item.ship_from_id = nil
       @item.valid?
-      expect(@item.errors.full_messages).to include('Address is not a number')
+      expect(@item.errors.full_messages).to include('Ship from is not a number')
     end
-    it 'address_idが1だと登録できない' do
-      @item.address_id = 1
+    it 'ship_from_idが1だと登録できない' do
+      @item.ship_from_id = 1
       @item.valid?
-      expect(@item.errors.full_messages).to include('Address must be other than 1')
+      expect(@item.errors.full_messages).to include('Ship from must be other than 1')
     end
     it 'imageが空だと登録できない' do
       @item.image = nil
