@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :order_donation do
-    token { 'aaaaa'}
+    token { 'aaaaa' }
     postal_code { '123-4567' }
     state_id { 2 }
     city { '東京都' }
