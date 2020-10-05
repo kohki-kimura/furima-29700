@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :order_donation do
+  factory :order_address do
     token { 'aaaaa' }
     postal_code { '123-4567' }
     state_id { 2 }
